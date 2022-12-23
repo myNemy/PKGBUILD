@@ -18,7 +18,8 @@ build() {
 	cd "$srcdir/$_pkgname-$pkgver"
 	./autogen.sh
 	./configure --prefix=/usr \
-	--disable-lang-indic
+	--disable-lang-indic \
+	CFLAGS='-Wno-error=free-nonheap-object' CXXFLAGS='-Wno-error=free-nonheap-object'
 }
 
 check() {
